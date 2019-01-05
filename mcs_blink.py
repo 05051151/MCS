@@ -6,11 +6,11 @@ import logging
 import RPi
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(14, GPIO.OUT)
+GPIO.setup(4, GPIO.OUT)
 # change this to the values from MCS web console
 DEVICE_INFO = {
     'device_id' : 'Dm9q9EH4',
-    'device_key' : 'ZnyzKhLtumPCILR0'
+    'device_key' : 'ZnyzKhLtumPClLR0'
 }
 
 # change 'INFO' to 'WARNING' to filter info messages
@@ -67,16 +67,16 @@ pin = None
 def setupLED():
     global pin
     # on LinkIt Smart 7699, pin 44 is the Wi-Fi LED.
-    pin = GPIO.output(14,GPIO.HIGH)
+    pin = GPIO.output(4,GPIO.HIGH)
     
 
 def setLED(state):
     # Note the LED is "reversed" to the pin's GPIO status.
     # So we reverse it here.
     if state:
-        GPIO.output(14,GPIO.HIGH)
+        GPIO.output(4,GPIO.HIGH)
     else:
-        GPIO.output(14,GPIO.LOW)
+        GPIO.output(4,GPIO.LOW)
 
 if __name__ == '__main__':
     setupLED()
